@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Login.css'
+import '../../styles/common.css'
 
 function Login() {
 
@@ -23,14 +24,14 @@ function Login() {
     }
 
     return (
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-            <div>
+      <div className="form-container">
+        <h1 className="title">Login</h1>
+        <form onSubmit={handleSubmit} className="form">
+            <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input type="email" id="emailid" name="email" value={formData.email} onChange={handleChange} required/>
             </div>
-            <div>
+            <div className='form-group'>
                 <label htmlFor="password">Password</label>
                 <input type="password" id="passwordid" name="password" value={formData.password} onChange={handleChange} required/>
             </div>
