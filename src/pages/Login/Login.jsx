@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai' 
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import './Login.css';
 import '../../styles/common.css';
+import Message from '../../components/ui/Message/Message'
 
 function Login() {
 
@@ -17,15 +18,20 @@ function Login() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   function validateField(name, value) {
     switch (name) {
       case "email":
         if (!value) return "Please enter the email you registered with"
         return "";
-      case "password":
+      case "password": {
         if (!value) return "Please enter your password"
+        const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+        if (!specialChars.test(value) || (value.length < 5)) return "Invalid password";
         return "";
+      }
       default:
         return "";
     }
@@ -57,10 +63,26 @@ function Login() {
     const newErrorValues = Object.values(newErrors);
 
     if (newErrorValues.every(error => error === "")) {
-        console.log("Form is valid and submitted", formData)
-    }
+      console.log("Form is valid and submitted", formData)
 
-    console.log('submitted login', formData)
+      setMessageType("success");
+      setSubmitMessage("Yay! Successfully logged in!");
+      
+
+      setTimeout(() => {
+        setSubmitMessage("");
+        setMessageType("");
+      }, 3000);
+
+      setFormData({
+        email: "",
+        password: ""
+      });
+
+    } else {
+      setMessageType("error");
+      setSubmitMessage("Oh no! You have a boo boo:(");
+    }
   }
 
   return (
@@ -74,24 +96,25 @@ function Login() {
         </div>
 
         <div className='form-group'>
-        <label htmlFor="password">Password</label>
-        <div className="password-field">
-          <input 
-            type={showPassword ? "text" : "password"} 
-            id="passwordid" 
-            name="password" 
-            value={formData.password} 
-            onChange={handleChange} 
-            required 
-          />
-          <span className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-          </span>
+          <label htmlFor="password">Password</label>
+          <div className="password-field">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="passwordid"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <span className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+          </div>
+          {errors.password && <span className="error">{errors.password}</span>}
         </div>
-        {errors.password && <span className="error">{errors.password}</span>}
-      </div>
 
         <button type="submit">Login</button>
+        {submitMessage && <Message type={messageType}>{submitMessage}</Message>}
         <p> Dont have an account? <Link to="/register">Register here</Link></p>
       </form>
     </div>

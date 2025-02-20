@@ -107,3 +107,12 @@ p {
 .error {
     color: red;
 }
+
+.success-message {
+    color: #0bd47d;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #e7faf2;
+}
