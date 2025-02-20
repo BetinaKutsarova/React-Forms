@@ -4,7 +4,7 @@
 
 .form-container {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 0px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,10 +27,32 @@
 }
 
 .form-group input {
+    width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    box-sizing: border-box;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: #666;
 }
 
 button {
@@ -54,11 +76,15 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.2s;
-    width: 80px;
+    width: 200px;
 
     text-decoration: none;
     text-align: center;
     display: inline-block;
+}
+
+.nav-link:hover {
+    background-color: #07995a;
 }
 
 a {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai' 
 import './Login.css';
 import '../../styles/common.css';
 
@@ -13,7 +14,9 @@ function Login() {
   const [errors, setErrors] = useState({
     email: "",
     password: ""
-  })
+  });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   function validateField(name, value) {
     switch (name) {
@@ -69,11 +72,25 @@ function Login() {
           <input type="email" id="emailid" name="email" value={formData.email} onChange={handleChange} required />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
+
         <div className='form-group'>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="passwordid" name="password" value={formData.password} onChange={handleChange} required />
-          {errors.password && <span className="error">{errors.password}</span>}
+        <label htmlFor="password">Password</label>
+        <div className="password-field">
+          <input 
+            type={showPassword ? "text" : "password"} 
+            id="passwordid" 
+            name="password" 
+            value={formData.password} 
+            onChange={handleChange} 
+            required 
+          />
+          <span className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+          </span>
         </div>
+        {errors.password && <span className="error">{errors.password}</span>}
+      </div>
+
         <button type="submit">Login</button>
         <p> Dont have an account? <Link to="/register">Register here</Link></p>
       </form>

@@ -37,6 +37,8 @@ function Register() {
 
             case "password": {
                 if (value.length < 5) return "Password must be at least 5 characters"
+                const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+                if (!specialChars.test(value)) return "Password must contain at least one special character";
                 return "";
             }
 
