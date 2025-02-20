@@ -1,9 +1,9 @@
 // import { useState } from 'react'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbar from './components/layout/Navbar/Navbar'
-import Login from './pages/Login/Login'
-import Register from './pages/Register/Register'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/layout/Navbar/Navbar';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Login />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App

@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import './Login.css'
-import '../../styles/common.css'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Login.css';
+import '../../styles/common.css';
 
 function Login() {
 
     const [formData, setFormData] = useState({
         email: "",
         password: ""
-    })
+    });
 
     function handleChange(e) {
         const { name, value } = e.target
         setFormData(prev => ({
           ...prev,
           [name]: value
-        }))
+        }));
       }
 
     function handleSubmit(e) {
@@ -39,7 +39,7 @@ function Login() {
             <p> Dont have an account? <Link to="/register">Register here</Link></p>
         </form>
       </div>
-    )
+    );
   }
   
   export default Login
