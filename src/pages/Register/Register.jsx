@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Register.css';
 import '../../styles/common.css';
 import Message from '../../components/ui/Message/Message'
+import PasswordStrengthIndicator from '../../components/ui/PasswordStrengthIndicator/PasswordStrengthIndicator';
 
 
 function Register() {
@@ -128,6 +129,7 @@ return (
             <div className="form-group">
                 <label htmlFor="password">Password</label>
                 <input type="password" id="passwordid" name="password" value={formData.password} onChange={handleChange} required />
+                <PasswordStrengthIndicator password={formData.password} />
                 {errors.password && <span className="error">{errors.password}</span>}
             </div>
             <div className="form-group">
