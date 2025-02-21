@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "First User",
+      "email": "example@email.com",
+      "password": "langalungale!"
+    },
+    {
+      "id": "aaae",
+      "username": "Ivan",
+      "email": "ivan@abv.bg",
+      "password": "12345!",
+      "createdAt": "2025-02-21T13:54:55.225Z"
+    },
+    {
+      "id": "b6ef",
+      "username": "Trayan",
+      "email": "trayan@abv.bg",
+      "password": "12345!",
+      "createdAt": "2025-02-21T13:57:44.970Z"
+    },
+    {
+      "id": "b37e",
+      "username": "gergana",
+      "email": "gergana@abv.bg",
+      "password": "12345!",
+      "createdAt": "2025-02-21T14:09:03.674Z"
+    },
+    {
+      "id": "9816",
+      "username": "Parvan",
+      "email": "parvan@abv.bg",
+      "password": "12345!",
+      "createdAt": "2025-02-21T14:09:29.145Z"
+    }
+  ],
+  "other": [
+    {
+      "id": 1,
+      "title": "sometitle",
+      "body": "hello"
+    }
+  ]
+}
