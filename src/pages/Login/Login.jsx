@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import './Login.css';
 import '../../styles/common.css';
-import Message from '../../components/ui/Message/Message'
+import FormInput from '../../components/ui/Input/Input';
+import Message from '../../components/ui/Message/Message';
 
 function Login() {
-
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -17,7 +16,6 @@ function Login() {
     password: ""
   });
 
-  const [showPassword, setShowPassword] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
   const [messageType, setMessageType] = useState("");
 
@@ -28,10 +26,10 @@ function Login() {
         if (!emailRegex.test(value)) return "Invalid email format"
         if (!value) return "Please enter the email you registered with"
         return "";
-        }
+      }
       case "password": {
         if (!value) return "Please enter your password"
-        const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+        const specialChars = /[!@#$%^&*(),.?":{}|<>]/; // do i need this here?
         if (!specialChars.test(value) || (value.length < 5)) return "Invalid password";
         return "";
       }
@@ -71,7 +69,6 @@ function Login() {
       setMessageType("success");
       setSubmitMessage("Yay! Successfully logged in!");
       
-
       setTimeout(() => {
         setSubmitMessage("");
         setMessageType("");
@@ -92,36 +89,34 @@ function Login() {
     <div className="form-container">
       <h1 className="title">Login</h1>
       <form onSubmit={handleSubmit} className="form">
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="emailid" name="email" value={formData.email} onChange={handleChange} required />
-          {errors.email && <span className="error">{errors.email}</span>}
-        </div>
+        <FormInput
+          label="Email"
+          name="email"
+          type="email"
+          id="emailid"
+          value={formData.email}
+          onChange={handleChange}
+          error={errors.email}
+          required
+        />
 
-        <div className='form-group'>
-          <label htmlFor="password">Password</label>
-          <div className="password-field">
-            <input
-              type={showPassword ? "text" : "password"}
-              id="passwordid"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            <span className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-            </span>
-          </div>
-          {errors.password && <span className="error">{errors.password}</span>}
-        </div>
+        <FormInput
+          label="Password"
+          name="password"
+          type="password"
+          id="passwordid"
+          value={formData.password}
+          onChange={handleChange}
+          error={errors.password}
+          required
+        />
 
         <button type="submit">Login</button>
         {submitMessage && <Message type={messageType}>{submitMessage}</Message>}
-        <p> Dont have an account? <Link to="/register">Register here</Link></p>
+        <p>Don&apos;t have an account? <Link to="/register">Register here</Link></p>
       </form>
     </div>
   );
 }
 
-export default Login
+export default Login;
