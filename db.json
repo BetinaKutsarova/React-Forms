@@ -33,6 +33,20 @@
       "email": "parvan@abv.bg",
       "password": "12345!",
       "createdAt": "2025-02-21T14:09:29.145Z"
+    },
+    {
+      "id": "c77e",
+      "username": "Misho",
+      "email": "mishoribata@gmail.com",
+      "password": "mishoribata!",
+      "createdAt": "2025-02-21T14:16:59.217Z"
+    },
+    {
+      "id": "1273",
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "12345!",
+      "createdAt": "2025-02-21T14:33:48.090Z"
     }
   ],
   "other": [

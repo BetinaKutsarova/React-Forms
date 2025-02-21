@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import './Register.css';
 import '../../styles/common.css';
 import FormInput from '../../components/ui/Input/Input';
@@ -8,6 +8,10 @@ import PasswordStrengthIndicator from '../../components/ui/PasswordStrengthIndic
 import registerUser from '../../utils/RegisterUser';
 
 function Register() {
+    const [submitMessage, setSubmitMessage] = useState("");
+    const [messageType, setMessageType] = useState("");
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         username: "",
         email: "",
@@ -21,9 +25,6 @@ function Register() {
         password: "",
         confirmPassword: ""
     });
-
-    const [submitMessage, setSubmitMessage] = useState("");
-    const [messageType, setMessageType] = useState("");
 
     function validateField(name, value) {
         switch (name) {
@@ -95,10 +96,14 @@ function Register() {
                     setMessageType("success");
                     setSubmitMessage("Yay! Successfully registered!");
 
+                    // setTimeout(() => {
+                    //     setSubmitMessage("");
+                    //     setMessageType("");
+                    // }, 3000);
+
                     setTimeout(() => {
-                        setSubmitMessage("");
-                        setMessageType("");
-                    }, 3000);
+                        navigate('/home');
+                    }, 1500);
 
                     setFormData({
                         username: "",

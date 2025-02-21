@@ -6,6 +6,9 @@ import FormInput from '../../components/ui/Input/Input';
 import Message from '../../components/ui/Message/Message';
 
 function Login() {
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -15,9 +18,6 @@ function Login() {
     email: "",
     password: ""
   });
-
-  const [submitMessage, setSubmitMessage] = useState("");
-  const [messageType, setMessageType] = useState("");
 
   function validateField(name, value) {
     switch (name) {
