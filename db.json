@@ -47,6 +47,13 @@
       "email": "test@gmail.com",
       "password": "12345!",
       "createdAt": "2025-02-21T14:33:48.090Z"
+    },
+    {
+      "id": "355d",
+      "username": "kalata",
+      "email": "kalata@abv.bg",
+      "password": "12345!",
+      "createdAt": "2025-02-21T14:54:19.163Z"
     }
   ],
   "other": [

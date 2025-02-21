@@ -6,6 +6,8 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Home from './pages/Home/home';
 
+// route guard
+
 function App() {
   return (
     <BrowserRouter>
