@@ -1,6 +1,11 @@
+import { useState } from 'react';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
+
 import './PasswordStrengthIndicator.css';
 
 function PasswordStrengthIndicator({ password }) {
+    const [showTip, setShowTip] = useState(false);
+
     const getStrength = (password) => {
         if (!password) return { score: 0, label: 'None' };
 
@@ -42,14 +47,35 @@ function PasswordStrengthIndicator({ password }) {
 
     return (
         <div className="password-strength-meter">
-            <div className="strength-meter">
+            <div className="strength-meter-container">
+                <div className="strength-meter">
+                    <div
+                        className="strength-meter-fill"
+                        style={{
+                            width: `${strength.percent}%`,
+                            backgroundColor: strength.color
+                        }}
+                    ></div>
+                </div>
                 <div
-                    className="strength-meter-fill"
-                    style={{
-                        width: `${strength.percent}%`,
-                        backgroundColor: strength.color
-                    }}
-                ></div>
+                    className="info-icon-container"
+                    onMouseEnter={() => setShowTip(true)}
+                    onMouseLeave={() => setShowTip(false)}
+                >
+                    <AiOutlineInfoCircle className="info-icon" />
+                    {showTip && (
+                        <div className="tooltip">
+                            <p>For a stronger password:</p>
+                            <ul>
+                                <li>Use at least 12 characters</li>
+                                <li>Include uppercase letters (A-Z)</li>
+                                <li>Include lowercase letters (a-z)</li>
+                                <li>Include numbers (0-9)</li>
+                                <li>Include special characters (!@#$%^&*)</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
             </div>
             {password && (
                 <div className="strength-label" style={{ color: strength.color }}>
