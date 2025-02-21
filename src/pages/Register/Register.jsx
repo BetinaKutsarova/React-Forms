@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.css';
 import '../../styles/common.css';
+import Message from '../../components/ui/Message/Message'
 
 
 function Register() {
@@ -21,6 +22,9 @@ function Register() {
 
     });
 
+    const [submitMessage, setSubmitMessage] = useState("");
+    const [messageType, setMessageType] = useState("");
+
     function validateField(name, value) {
         switch (name) {
             case "username": {
@@ -36,6 +40,7 @@ function Register() {
             }
 
             case "password": {
+                if (!value) return "A password is required"
                 if (value.length < 5) return "Password must be at least 5 characters"
                 const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
                 if (!specialChars.test(value)) return "Password must contain at least one special character";
@@ -82,38 +87,61 @@ function Register() {
 
         if (newErrorValues.every(error => error === "")) {
             console.log("Form is valid and submitted", formData)
-        }
 
+            setMessageType("success");
+            setSubmitMessage("Yay! Successfully registered!");
+
+
+            setTimeout(() => {
+                setSubmitMessage("");
+                setMessageType("");
+            }, 3000);
+
+            setFormData({
+                username: "",
+                email: "",
+                password: "",
+                confirmPassword: ""
+            });
+
+        } else {
+            setMessageType("error");
+            setSubmitMessage("Oh no! You have a boo boo:(");
+        }
     }
-    return (
-        <div className="form-container">
-            <h1 className="title">Register</h1>
-            <form onSubmit={handleSubmit} className="form">
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input type="username" id="usernameid" name="username" value={formData.username} onChange={handleChange} required />
-                    {errors.username && <span className="error">{errors.username}</span>}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="emailid" name="email" value={formData.email} onChange={handleChange} required />
-                    {errors.email && <span className="error">{errors.email}</span>}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="passwordid" name="password" value={formData.password} onChange={handleChange} required />
-                    {errors.password && <span className="error">{errors.password}</span>}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPasswordid" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
-                    {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
-                </div>
-                <button type="submit">Register</button>
-                <p> Already have an account? <Link to="/login">Login here</Link></p>
-            </form>
-        </div>
-    );
+
+
+return (
+    <div className="form-container">
+        <h1 className="title">Register</h1>
+        <form onSubmit={handleSubmit} className="form">
+            <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input type="username" id="usernameid" name="username" value={formData.username} onChange={handleChange} required />
+                {errors.username && <span className="error">{errors.username}</span>}
+            </div>
+            <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="emailid" name="email" value={formData.email} onChange={handleChange} required />
+                {errors.email && <span className="error">{errors.email}</span>}
+            </div>
+            <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" id="passwordid" name="password" value={formData.password} onChange={handleChange} required />
+                {errors.password && <span className="error">{errors.password}</span>}
+            </div>
+            <div className="form-group">
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPasswordid" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
+                {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
+            </div>
+            <button type="submit">Register</button>
+            {submitMessage && <Message type={messageType}>{submitMessage}</Message>}
+            <p> Already have an account? <Link to="/login">Login here</Link></p>
+        </form>
+    </div>
+);
 }
+
 
 export default Register 

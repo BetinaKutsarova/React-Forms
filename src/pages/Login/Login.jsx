@@ -23,9 +23,12 @@ function Login() {
 
   function validateField(name, value) {
     switch (name) {
-      case "email":
+      case "email": {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(value)) return "Invalid email format"
         if (!value) return "Please enter the email you registered with"
         return "";
+        }
       case "password": {
         if (!value) return "Please enter your password"
         const specialChars = /[!@#$%^&*(),.?":{}|<>]/;
