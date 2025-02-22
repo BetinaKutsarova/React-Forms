@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "First User",
       "email": "example@email.com",
       "password": "langalungale!"
@@ -54,11 +54,18 @@
       "email": "kalata@abv.bg",
       "password": "12345!",
       "createdAt": "2025-02-21T14:54:19.163Z"
+    },
+    {
+      "id": "b49f",
+      "username": "yavcho",
+      "email": "test@avbv.bf",
+      "password": "12345qwertQ!",
+      "createdAt": "2025-02-22T17:18:54.111Z"
     }
   ],
   "other": [
     {
-      "id": 1,
+      "id": "1",
       "title": "sometitle",
       "body": "hello"
     }
