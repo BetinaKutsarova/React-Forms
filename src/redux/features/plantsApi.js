@@ -11,7 +11,7 @@ export const plantsApi = createApi({
   }),
   endpoints: (builder) => ({
     getPlants: builder.query({
-      query: (page = 1) => `plants?page=${page}`
+      query: (page = 1) => `plants?page=${page}` // &per_page=desiredNumber or it defaults to 20
     }),
     getPlantsBySearch: builder.query({
       query: (searchTerm) => `plants/search?q=${searchTerm}`
