@@ -12,6 +12,9 @@
 }
 
 .plant-card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
@@ -73,3 +76,30 @@
     text-align: center;
     padding: 20px;
 }
+
+.heart-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .heart-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .heart-icon {
+    font-size: 20px;
+    color: #cccccc;
+  }
+  
+  .heart-icon.filled {
+    color: #4CAF50;
+  }
