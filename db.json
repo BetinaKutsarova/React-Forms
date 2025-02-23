@@ -63,11 +63,5 @@
       "createdAt": "2025-02-22T17:18:54.111Z"
     }
   ],
-  "other": [
-    {
-      "id": "1",
-      "title": "sometitle",
-      "body": "hello"
-    }
-  ]
+  "favorites": []
 }
