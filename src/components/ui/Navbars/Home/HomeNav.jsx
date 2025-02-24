@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { LuSalad } from "react-icons/lu";
-import './HomeNav.css';
+import { PiPlantFill } from 'react-icons/pi';
+import '../CommonNav.css';
 
 function HomeNav() {
   return (
     <nav className="home-navbar">
       <Link to="/favorites" className="home-nav-link">
-        <LuSalad size={24} />
+        <PiPlantFill size={24} />
       </Link>
     </nav>
   );
