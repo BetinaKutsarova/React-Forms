@@ -17,9 +17,11 @@ const PlantCard = ({ plant, isPlantFavorited, onToggleFavorite }) => {
             alt={plant.common_name || plant.scientific_name}
           />
         )}
-        <h2>{plant.common_name || plant.scientific_name}</h2>
-        <p className="scientific-name">{plant.scientific_name}</p>
-        <p>{plant.family_common_name}</p>
+        <div className="plant-info">
+            <h2>{plant.common_name || plant.scientific_name}</h2>
+            <p className="scientific-name">{plant.scientific_name}</p>
+            <p>{plant.family_common_name}</p>
+        </div>
       </Link>
       <button 
         className="heart-button"
