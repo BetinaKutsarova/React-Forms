@@ -32,11 +32,6 @@
     cursor: not-allowed;
 }
 
-.loading {
-    text-align: center;
-    padding: 20px;
-}
-
 .error {
     color: red;
     text-align: center;

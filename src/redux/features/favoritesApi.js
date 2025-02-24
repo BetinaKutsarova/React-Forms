@@ -7,7 +7,8 @@ export const favoritesApi = createApi({
   endpoints: (builder) => ({
     getFavorites: builder.query({
       query: () => '/favorites',
-      providesTags: ['Favorite']
+      providesTags: ['Favorite'],
+      suspense: true
     }),
     addFavorite: builder.mutation({
       query: (plant) => ({

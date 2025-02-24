@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import AuthNav from '../../ui/Navbars/AuthNav'
 import HomeNav from '../../ui/Navbars/HomeNav';
-// import './Navbar.css'
 
 function Navbar() {
   const location = useLocation();

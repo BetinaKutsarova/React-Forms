@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import FavoriteCard from '../../components/ui/Cards/FavoriteCard'
 import './Favorites.css'
 
+
 function Favorites() {
-    const { data: favorites = [], error, isLoading } = useGetFavoritesQuery()
-  
-    if (isLoading) {
-      return <div className="loading">Loading favorites...</div>
-    }
+    const { data: favorites = [], error } = useGetFavoritesQuery()
+
+    // add isFetching
   
     if (error) {
       return <div className="error">Error loading favorites: {error.message}</div>

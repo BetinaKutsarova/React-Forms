@@ -3,6 +3,8 @@ import { useGetPlantsQuery } from '../../redux/features/plantsApi'
 import { useAddFavoriteMutation, useGetFavoritesQuery, useRemoveFavoriteMutation} from '../../redux/features/favoritesApi'
 import PlantCard from '../../components/ui/Cards/PlantCard'
 import './Home.css'
+import '../../styles/common.css'
+import Loader from '../../components/ui/Loader/Loader'
 
 function Home() {
   console.log("API Key:", import.meta.env.VITE_TREFLE_API_KEY);
@@ -10,11 +12,9 @@ function Home() {
   const {data: favorites = []} = useGetFavoritesQuery()
   const [addFavorite] = useAddFavoriteMutation()
   const [removeFavorite] = useRemoveFavoriteMutation()
-  const { data, error, isLoading } = useGetPlantsQuery(page)
+  const { data, error, isFetching} = useGetPlantsQuery(page)
 
-  if (isLoading) {
-    return <div className="loading">Loading plants...</div>
-  }
+  
 
   if (error) {
     console.log('API Error:', error);
@@ -54,32 +54,38 @@ function Home() {
     <div className="home-container">
       <h1>Explore Earth&apos;s Gardens</h1>
       
-      <div className="plants-grid">
-        {data?.data.map((plant) => (
-          <PlantCard
-            key={plant.id}
-            plant={plant}
-            isPlantFavorited={isPlantFavorited}
-            onToggleFavorite={handleToggleFavorite}
-          />
-        ))}
-      </div>
+      {isFetching ? (
+        <Loader />
+      ) : (
+        <>
+          <div className="plants-grid">
+            {data?.data.map((plant) => (
+              <PlantCard
+                key={plant.id}
+                plant={plant}
+                isPlantFavorited={isPlantFavorited}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            ))}
+          </div>
 
-      <div className="pagination">
-        <button
-          onClick={() => setPage(prev => Math.max(1, prev - 1))}
-          disabled={page === 1}
-        >
-          Previous
-        </button>
-        <span>Page {page}</span>
-        <button
-          onClick={() => setPage(prev => prev + 1)}
-          disabled={!data?.links?.next}
-        >
-          Next
-        </button>
-      </div>
+          <div className="pagination">
+            <button
+              onClick={() => setPage(prev => Math.max(1, prev - 1))}
+              disabled={page === 1}
+            >
+              Previous
+            </button>
+            <span>Page {page}</span>
+            <button
+              onClick={() => setPage(prev => prev + 1)}
+              disabled={!data?.links?.next}
+            >
+              Next
+            </button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
