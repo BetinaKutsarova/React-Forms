@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
-import AuthButtons from '../../ui/Navbars/AuthNav'
-import './Navbar.css'
+import AuthNav from '../../ui/Navbars/AuthNav'
+import HomeNav from '../../ui/Navbars/HomeNav';
+// import './Navbar.css'
 
 function Navbar() {
   const location = useLocation();
@@ -9,15 +10,10 @@ function Navbar() {
                           location.pathname === '/';
   
   return (
-    <nav className="navbar">
-      {showAuthButtons && <AuthButtons />}
-
-      {/* {!showAuthButtons && (
-        <div
-        </div>
-      )} */}
-
-    </nav>
+    <>
+      {showAuthButtons && <AuthNav />}
+      {!showAuthButtons && <HomeNav />}
+    </>
   );
 }
 

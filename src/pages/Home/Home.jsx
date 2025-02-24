@@ -52,7 +52,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h1>Plantssssssssss</h1>
+      <h1>Explore Earth&apos;s Gardens</h1>
       
       <div className="plants-grid">
         {data?.data.map((plant) => (

@@ -24,7 +24,7 @@ const PlantCard = ({ plant, isPlantFavorited, onToggleFavorite }) => {
       <button 
         className="heart-button"
         onClick={handleFavoriteClick}
-        aria-label={isPlantFavorited(plant) ? 'Remove from favorites' : 'Add to favorites'}
+        aria-label={isPlantFavorited(plant) ? 'Remove from garden favorites' : 'Add to garden favorites'}
       >
         {isPlantFavorited(plant) ? (
           <FaHeart className="heart-icon filled" />

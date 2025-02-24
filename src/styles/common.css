@@ -67,26 +67,7 @@ button {
     text-decoration: none;
 }
 
-.nav-link {
-    /* should look like a button */
-    padding: 10px;
-    background-color: #0bd47d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s;
-    width: 200px;
 
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-}
-
-.nav-link:hover {
-    background-color: #07995a;
-}
 
 a {
     color: black;

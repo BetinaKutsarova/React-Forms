@@ -1,0 +1,24 @@
+.home-navbar {
+    display: flex;
+    justify-content: right;
+    gap: 1px;
+}
+
+.home-nav-link {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    width: 50px;
+
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.home-nav-link:hover {
+    background-color: #07995a;
+}
