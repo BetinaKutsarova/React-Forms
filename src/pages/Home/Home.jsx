@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useGetPlantsQuery } from '../../redux/features/plantsApi'
 import { useAddFavoriteMutation, useGetFavoritesQuery, useRemoveFavoriteMutation} from '../../redux/features/favoritesApi'
-import { Link } from 'react-router-dom'
-import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import PlantCard from '../../components/ui/Cards/PlantCard'
 import './Home.css'
 
 function Home() {
@@ -57,33 +56,12 @@ function Home() {
       
       <div className="plants-grid">
         {data?.data.map((plant) => (
-          <div key={plant.id} className="plant-card">
-            <Link to={`/plant/${plant.id}`}>
-              {plant.image_url && (
-                <img 
-                  src={plant.image_url} 
-                  alt={plant.common_name || plant.scientific_name}
-                />
-              )}
-              <h2>{plant.common_name || plant.scientific_name}</h2>
-              <p className="scientific-name">{plant.scientific_name}</p>
-              <p>{plant.family_common_name}</p>
-            </Link>
-            <button 
-              className="heart-button"
-              onClick={(e) => {
-                e.preventDefault();
-                handleToggleFavorite(plant);
-              }}
-              aria-label={isPlantFavorited(plant) ? 'Remove from favorites' : 'Add to favorites'}
-            >
-              {isPlantFavorited(plant) ? (
-                <FaHeart className="heart-icon filled" />
-              ) : (
-                <FaRegHeart className="heart-icon" />
-              )}
-            </button>
-          </div>
+          <PlantCard
+            key={plant.id}
+            plant={plant}
+            isPlantFavorited={isPlantFavorited}
+            onToggleFavorite={handleToggleFavorite}
+          />
         ))}
       </div>
 
