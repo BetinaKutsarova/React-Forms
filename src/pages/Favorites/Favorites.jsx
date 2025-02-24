@@ -4,10 +4,19 @@ import FavoriteCard from '../../components/ui/Cards/FavoriteCard'
 import './Favorites.css'
 import Loader from '../../components/ui/Loader/Loader'
 import '../../styles/common.css'
+import Pagination from '../../components/ui/Pagination/Pagination'
+import { useState } from 'react'
 
 
 function Favorites() {
+    const [page, setPage] = useState(1);
+    const itemsPerPage = 10;
     const { data: favorites = [], error, isFetching } = useGetFavoritesQuery()
+
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedFavorites = favorites.slice(startIndex, endIndex);
+    const hasMorePages = endIndex < favorites.length;
 
     if (error) {
         return <div className="error">Error loading favorites: {error.message}</div>
@@ -28,10 +37,18 @@ function Favorites() {
             ) : (
                 <>
                     <div className="favorites-list">
-                        {favorites.map((plant) => (
+                        {paginatedFavorites.map((plant) => (
                             <FavoriteCard key={plant.id} plant={plant} />
                         ))}
                     </div>
+
+                    {favorites.length > itemsPerPage && (
+                        <Pagination 
+                        currentPage={page} 
+                        onPageChange={setPage} 
+                        hasNextPage={hasMorePages} 
+                        />
+                    )}
                 </>
             )}
         </div>

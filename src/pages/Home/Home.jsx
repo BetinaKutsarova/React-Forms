@@ -5,6 +5,7 @@ import PlantCard from '../../components/ui/Cards/PlantCard'
 import './Home.css'
 import '../../styles/common.css'
 import Loader from '../../components/ui/Loader/Loader'
+import Pagination from '../../components/ui/Pagination/Pagination'
 
 function Home() {
   console.log("API Key:", import.meta.env.VITE_TREFLE_API_KEY);
@@ -69,21 +70,11 @@ function Home() {
             ))}
           </div>
 
-          <div className="pagination">
-            <button
-              onClick={() => setPage(prev => Math.max(1, prev - 1))}
-              disabled={page === 1}
-            >
-              Previous
-            </button>
-            <span>Page {page}</span>
-            <button
-              onClick={() => setPage(prev => prev + 1)}
-              disabled={!data?.links?.next}
-            >
-              Next
-            </button>
-          </div>
+          <Pagination 
+            currentPage={page} 
+            onPageChange={setPage} 
+            hasNextPage={!!data?.links?.next} 
+          />
         </>
       )}
     </div>
