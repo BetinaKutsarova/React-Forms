@@ -1,6 +1,7 @@
 import './FavoriteCard.css'
 import { ImCross } from 'react-icons/im'
 import { useRemoveFavoriteMutation } from '../../../redux/features/favoritesApi'
+import PlantImage from '../Images/PlantImage'
 
 function FavoriteCard({ plant }) {
     const [removeFavorite] = useRemoveFavoriteMutation()
@@ -17,15 +18,15 @@ function FavoriteCard({ plant }) {
     <div className="favorite-item">
       <div className="plant-image">
         {plant.image_url && (
-          <img 
-            src={plant.image_url} 
-            alt={plant.common_name || plant.scientific_name}
-          />
+          <PlantImage 
+          imageUrl={plant.image_url}
+          altText={plant.common_name || plant.scientific_name}
+        />
         )}
       </div>
       <div className="plant-info">
         <h2>{plant.common_name || plant.scientific_name}</h2>
-        <p className="scientific-name">{plant.scientific_name}</p>
+        <p className="scientific-name-favorite">{plant.scientific_name}</p>
         {plant.family_common_name && (
           <p className="family-name">Family: {plant.family_common_name}</p>
         )}

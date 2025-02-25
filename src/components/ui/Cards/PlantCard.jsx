@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import PlantImage from '../Images/PlantImage';
 import '../../ui/Cards/PlantCard.css';
+
 
 const PlantCard = ({ plant, isPlantFavorited, onToggleFavorite }) => {
   const handleFavoriteClick = (e) => {
@@ -12,14 +14,14 @@ const PlantCard = ({ plant, isPlantFavorited, onToggleFavorite }) => {
     <div className="plant-card">
       <Link to={`/plant/${plant.id}`}>
         {plant.image_url && (
-          <img 
-            src={plant.image_url} 
-            alt={plant.common_name || plant.scientific_name}
-          />
+          <PlantImage 
+          imageUrl={plant.image_url}
+          altText={plant.common_name || plant.scientific_name}
+        />
         )}
         <div className="plant-info">
             <h2>{plant.common_name || plant.scientific_name}</h2>
-            <p className="scientific-name">{plant.scientific_name}</p>
+            <p className="scientific-name-home">{plant.scientific_name}</p>
             <p>{plant.family_common_name}</p>
         </div>
       </Link>

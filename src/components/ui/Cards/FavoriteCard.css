@@ -1,7 +1,7 @@
 .favorite-item {
     display: flex;
     position: relative;
-    background: white;
+    background-color: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -38,7 +38,7 @@
     margin: 0 0 10px 0;
 }
 
-.scientific-name {
+.scientific-name-favorite {
     font-style: italic;
     color: #636e72;
     margin: 0 0 8px 0;

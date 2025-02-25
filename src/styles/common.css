@@ -2,8 +2,13 @@
     font-family: Arial, sans-serif;
 }
 
+body {
+    background-color: #f0f5f0;
+}
+
 .form-container {
     max-width: 400px;
+    background-color: white;
     margin: 0px auto;
     padding: 20px;
     border-radius: 8px;
@@ -102,9 +107,26 @@ p {
 h1 {
     display: flex;
     justify-content: center;
-    color:#07995a;
-    -webkit-text-stroke: 1px black;
-}
+    color: #07995a;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    margin: 32px 0;
+    position: relative;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+  
+  h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #07995a;
+    border-radius: 3px;
+  }
 
 
 
