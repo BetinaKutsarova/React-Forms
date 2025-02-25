@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
-function Input({ 
-  label, 
-  name, 
-  type = 'text', 
-  value, 
-  onChange, 
-  error, 
+function Input({
+  label,
+  name,
+  type = 'text',
+  value,
+  onChange,
+  error,
   required = false,
   id,
-  children // For additional content like password strength indicator
+  children
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const inputType = type === 'password' && showPassword ? 'text' : type;
@@ -18,7 +18,7 @@ function Input({
   return (
     <div className="form-group">
       <label htmlFor={id || name}>{label}</label>
-      
+
       {type === 'password' ? (
         <div className="password-field">
           <input
@@ -43,7 +43,7 @@ function Input({
           required={required}
         />
       )}
-      
+
       {children}
       {error && <span className="error">{error}</span>}
     </div>

@@ -1,0 +1,145 @@
+.plant-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.plant-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #3a5a40;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: #344e41;
+}
+
+.heart-button-detail {
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+}
+
+.heart-icon.filled {
+    color: #4CAF50;
+}
+
+.plant-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.plant-detail-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.plant-detail-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    max-height: 500px ;
+}
+
+.plant-detail-info {
+    flex: 1;
+}
+
+.scientific-name {
+    font-style: italic;
+    color: #666;
+    margin-top: 50px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.year {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.plant-detail-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detail-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    color: #3a5a40;
+    border-bottom: 2px solid #a3b18a;
+    padding-bottom: 0.5rem;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #3a5a40;
+    min-width: 140px;
+}
+
+.distribution-list {
+    columns: 1;
+    column-gap: 2rem;
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .distribution-list {
+      columns: 2;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .distribution-list {
+      columns: 3;
+    }
+  }

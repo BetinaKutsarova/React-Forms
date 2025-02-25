@@ -5,14 +5,13 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    transition: box-shadow 0.3 ease;
 }
 
 .favorite-item:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
-
 
 .plant-image {
     width: 200px;
@@ -49,8 +48,12 @@
 .family-name {
     color: #636e72;
     margin: 0;
+}
+
+.family-name-favorite {
+    color: #636e72;
+    margin: 0;
     text-align: left !important;
-    
 }
 
 @media (max-width: 768px) {

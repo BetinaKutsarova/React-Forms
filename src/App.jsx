@@ -8,6 +8,8 @@ const Login = lazy(() => import('./pages/Login/Login'));
 const Register = lazy(() => import('./pages/Register/Register'));
 const Home = lazy(() => import('./pages/Home/home'));
 const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
+const PlantDetail = lazy(() => import('./pages/Plants/PlantDetail'));
+const NotFound = lazy(() => import('./pages/Other/NotFound'));
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Login />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="plants/:id" element={<PlantDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </Suspense>
     </BrowserRouter>

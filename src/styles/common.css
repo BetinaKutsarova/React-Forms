@@ -62,7 +62,7 @@ body {
 
 button {
     padding: 10px;
-    background-color: #0bd47d;
+    background-color: #3a5a40;
     color: white;
     border: none;
     border-radius: 4px;
@@ -72,14 +72,12 @@ button {
     text-decoration: none;
 }
 
-
-
 a {
     color: black;
 }
 
 button:hover {
-    background-color: #07995a;
+    background-color: #344e41;
 }
 
 p {
@@ -107,16 +105,16 @@ p {
 h1 {
     display: flex;
     justify-content: center;
-    color: #07995a;
+    color: #3a5a40;
     font-weight: 600;
     font-size: 40px;
     letter-spacing: -0.8px;
-    margin: 32px 0;
+    margin: 30px 0px 60px;
     position: relative;
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  h1::after {
+}
+
+h1::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -126,8 +124,8 @@ h1 {
     height: 3px;
     background-color: #07995a;
     border-radius: 3px;
-  }
+}
 
-
-
-
+.not-found {
+    text-align: center;
+}

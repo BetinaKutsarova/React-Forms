@@ -61,6 +61,13 @@
       "email": "test@avbv.bf",
       "password": "12345qwertQ!",
       "createdAt": "2025-02-22T17:18:54.111Z"
+    },
+    {
+      "id": "215f",
+      "username": "teeeeest",
+      "email": "asd@abv.bg",
+      "password": "12345Q!",
+      "createdAt": "2025-02-25T12:48:24.831Z"
     }
   ],
   "favorites": [

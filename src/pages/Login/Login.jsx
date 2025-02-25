@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
 import '../../styles/common.css';
 import FormInput from '../../components/ui/Input/Input';
 import Message from '../../components/ui/Message/Message';

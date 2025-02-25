@@ -2,7 +2,6 @@ function PlantImage({ imageUrl, altText, className }) {
   const handleImageError = (e) => {
     e.target.onerror = null;
     e.target.src = 'fallbackplant.jpg';
-    e.target.classList.add('image-error');
   };
 
   return (
