@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/common.css';
 import FormInput from '../../components/ui/Input/Input';
 import Message from '../../components/ui/Message/Message';
@@ -7,6 +7,7 @@ import Message from '../../components/ui/Message/Message';
 function Login() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -69,9 +70,8 @@ function Login() {
       setSubmitMessage("Yay! Successfully logged in!");
       
       setTimeout(() => {
-        setSubmitMessage("");
-        setMessageType("");
-      }, 3000);
+        navigate('/home');
+      }, 1500);
 
       setFormData({
         email: "",

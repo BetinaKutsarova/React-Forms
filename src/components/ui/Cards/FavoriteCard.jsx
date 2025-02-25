@@ -2,6 +2,7 @@ import './FavoriteCard.css'
 import { ImCross } from 'react-icons/im'
 import { useRemoveFavoriteMutation } from '../../../redux/features/favoritesApi'
 import PlantImage from '../Images/PlantImage'
+import { Link } from 'react-router-dom'
 
 function FavoriteCard({ plant }) {
   const [removeFavorite] = useRemoveFavoriteMutation()
@@ -15,7 +16,10 @@ function FavoriteCard({ plant }) {
   }
 
   return (
+    
     <div className="favorite-item">
+      
+      <Link to={`/plants/${plant.id}`}>
       <div className="plant-image">
         {plant.image_url && (
           <PlantImage
@@ -24,6 +28,8 @@ function FavoriteCard({ plant }) {
           />
         )}
       </div>
+      
+      </Link>
       <div className="plant-info">
         <h2>{plant.common_name || plant.scientific_name}</h2>
         <p className="scientific-name-favorite">{plant.scientific_name}</p>
@@ -31,6 +37,9 @@ function FavoriteCard({ plant }) {
           <p className="family-name-favorite">Family: {plant.family_common_name}</p>
         )}
       </div>
+      
+      
+      
       <button
         className="remove-button"
         onClick={handleRemove}
@@ -39,6 +48,7 @@ function FavoriteCard({ plant }) {
         <ImCross />
       </button>
     </div>
+    
   )
 }
 

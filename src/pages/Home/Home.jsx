@@ -36,6 +36,7 @@ function Home() {
       } else {
         console.log('Adding new favorite:', plant.scientific_name)
         await addFavorite({
+          id: String(plant.id),
           common_name: plant.common_name,
           scientific_name: plant.scientific_name,
           image_url: plant.image_url,

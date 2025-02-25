@@ -49,6 +49,7 @@ function PlantDetail() {
                 await removeFavorite(existingFavorite.id);
             } else {
                 await addFavorite({
+                    id: String(id),
                     common_name: plant.common_name,
                     scientific_name: plant.scientific_name,
                     image_url: plant.image_url,

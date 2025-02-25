@@ -1,21 +1,24 @@
 .plant-detail-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 16px;
 }
 
 .plant-detail-header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .back-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    gap: 8px;
+    padding: 8px 16px;
     background-color: #3a5a40;
     color: white;
     text-decoration: none;
@@ -30,8 +33,6 @@
 
 .heart-button-detail {
     position: relative;
-    bottom: 10px;
-    right: 10px;
     background: none;
     border: none;
     cursor: pointer;
@@ -40,7 +41,6 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease;
-
 }
 
 .heart-icon.filled {
@@ -50,96 +50,149 @@
 .plant-detail-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 24px;
 }
 
 .plant-detail-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 24px;
 }
 
 .plant-detail-image {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    max-height: 500px ;
+    /* width: 100%; */
+    max-width: 600px;
+    max-height: 500px;
+    object-fit: contain;
 }
 
 .plant-detail-info {
-    flex: 1;
+    width: 100%;
 }
 
 .scientific-name {
     font-style: italic;
     color: #666;
-    margin-top: 50px;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-size: clamp(16px, 2vw, 19px);
 }
 
 .year {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     color: #555;
 }
 
 .plant-detail-sections {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .detail-section {
     background-color: #f8f9fa;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .detail-section h2 {
     margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: 16px;
     color: #3a5a40;
     border-bottom: 2px solid #a3b18a;
-    padding-bottom: 0.5rem;
+    padding-bottom: 8px;
+    font-size: clamp(18px, 3vw, 24px);
 }
 
 .detail-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .detail-item {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 4px;
 }
 
 .detail-label {
     font-weight: bold;
     color: #3a5a40;
-    min-width: 140px;
+    min-width: 120px;
 }
 
 .distribution-list {
     columns: 1;
-    column-gap: 2rem;
+    column-gap: 24px;
     list-style-type: disc;
     margin: 0;
-    padding-left: 1.5rem;
+    padding-left: 24px;
 }
 
 @media (min-width: 576px) {
-    .distribution-list {
-      columns: 2;
+    .plant-detail-container {
+        padding: 20px;
     }
-  }
-  
-  @media (min-width: 992px) {
-    .distribution-list {
-      columns: 3;
+    
+    .detail-section {
+        padding: 24px;
     }
-  }
+    
+    .distribution-list {
+        columns: 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .plant-detail-main {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .plant-detail-image {
+        max-width: 45%;
+        height: auto;
+    }
+    
+    .plant-detail-info {
+        flex: 1;
+    }
+    
+    .scientific-name {
+        margin-top: 0;
+    }
+    
+    .detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .detail-item {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) {
+    .plant-detail-container {
+        padding: 24px;
+    }
+    
+    .detail-section {
+        padding: 32px;
+    }
+    
+    .distribution-list {
+        columns: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .detail-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

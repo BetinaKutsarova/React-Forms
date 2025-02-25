@@ -72,67 +72,25 @@
   ],
   "favorites": [
     {
-      "id": "b194",
+      "id": "109482",
+      "common_name": "Common nettle",
+      "scientific_name": "Urtica dioica",
+      "image_url": "https://bs.plantnet.org/image/o/9db58cbb3538a6b77384f972971d51869228e545",
+      "family_common_name": null
+    },
+    {
+      "id": "227114",
       "common_name": "Barnyard grass",
       "scientific_name": "Dactylis glomerata",
       "image_url": "https://bs.plantnet.org/image/o/f84a7d4fc2e627ccd451f568479b1932c2b2d900",
       "family_common_name": null
     },
     {
-      "id": "a9d2",
-      "common_name": "Milfoil",
-      "scientific_name": "Achillea millefolium",
-      "image_url": "https://bs.plantnet.org/image/o/d788a757cd8bac8c3b1378a970c078a7a937a174",
-      "family_common_name": "Aster family"
-    },
-    {
-      "id": "e945",
-      "common_name": "Dutch clover",
-      "scientific_name": "Trifolium repens",
-      "image_url": "https://bs.plantnet.org/image/o/170ca6a6020d9e9f95f86112577aeabcb23f5b96",
+      "id": "128860",
+      "common_name": "Narrow-leaf plantain",
+      "scientific_name": "Plantago lanceolata",
+      "image_url": "https://bs.plantnet.org/image/o/f8d7d6fe52e36d04f5ad1fc03f46f604d5c3cc43",
       "family_common_name": null
-    },
-    {
-      "id": "13a7",
-      "common_name": "Yorkshire-fog",
-      "scientific_name": "Holcus lanatus",
-      "image_url": "https://bs.plantnet.org/image/o/c0800816e2f56ed6e7702c31efd91afcdfddd68c",
-      "family_common_name": null
-    },
-    {
-      "id": "706a",
-      "common_name": "Creeping buttercup",
-      "scientific_name": "Ranunculus repens",
-      "image_url": "https://bs.plantnet.org/image/o/90746f2a4592ed4dbc6a166234f488654565605e",
-      "family_common_name": null
-    },
-    {
-      "id": "ec0b",
-      "common_name": "Pedunculate oak",
-      "scientific_name": "Quercus robur",
-      "image_url": "https://bs.plantnet.org/image/o/0d16977470dfdcd37d495a5b33c2f343224ebe98",
-      "family_common_name": null
-    },
-    {
-      "id": "5fdd",
-      "common_name": "Cow-parsnip",
-      "scientific_name": "Heracleum sphondylium",
-      "image_url": "https://bs.plantnet.org/image/o/795061348098dfe2c4cdedd6a5dcb5c9db848d55",
-      "family_common_name": "Carrot family"
-    },
-    {
-      "id": "ada1",
-      "common_name": "Tufted hairgrass",
-      "scientific_name": "Deschampsia cespitosa",
-      "image_url": "https://bs.plantnet.org/image/o/f211f64ec30eef99019954d1f4284d56218417eb",
-      "family_common_name": null
-    },
-    {
-      "id": "5640",
-      "common_name": "Sloe",
-      "scientific_name": "Prunus spinosa",
-      "image_url": "https://bs.plantnet.org/image/o/74001fa4fbba45263756df516209aba8525620f9",
-      "family_common_name": "Rose family"
     }
   ]
 }
